@@ -136,6 +136,20 @@ a.text:hover, a.text:active {
 	    text-decoration: none;
     transition: all 0.3s ease-in 0s;
 }
+
+
+.whiteBG {
+    font-size: 18px;
+    color:#d5dbdb;
+}
+
+.blueBG {
+    font-size: 18px;
+}
+
+.orangeBG {
+    font-size: 18px;
+}
 /*----------------media queries-----------------*/
 
 /*If device width is less than or equal to 800px, then do ...*/
@@ -244,7 +258,7 @@ a.text:hover, a.text:active {
 
 .container {
 	position: relative;
-    background-image: url(img/backgroundflower2.gif);
+    background-image: url(img/flowr.gif);
     background-repeat: no-repeat;
     height: 100px;
     background-size: cover;
@@ -475,7 +489,6 @@ footer a:hover {
   display: none;
   overflow: hidden;
 }
-
 
 /*----------------back to top button-----------------*/
 #myBtn {
