@@ -1,0 +1,510 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>The Other Side | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+    
+<!--The following Javascript runs the anime.js animation-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> 
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logoz.png" width="170" height="95" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Ouija Board Test</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Ghostly Experience</a>
+        </li>
+        <li>
+          <a href="#vid">In Memory Of</a>
+			</li>
+        <li>
+          <a href="#num">How to: Ouija</a>
+        </li>
+        <li>
+            <a href="#txt">Human Fascination</a>
+        </li>
+        <li>
+            <a href="#hlg">Healing</a>
+        </li>
+    
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+    <h1 class="ml9">
+    <span class="text-wrapper">
+    <span class="letters">The Other Side</span>
+  </span>
+    </h1>
+</div> 
+     
+    
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Welcome!</h2>
+<article>
+<p class="tab">Humans have always been fascinated by death—it's one of the few things we have no way of knowing about. So welcome to The Other Side, a site all about ghosts and spirits and communicating with them.<br></p>
+<p class="tab"><a href="#gal">Navigation</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">An Evening with an Ouija Board</h2>
+<article><!--beginning of article-->
+<p class="tab">Three friends gather to use a ouija board, a spiritual tool that's said to help communicate with the other side of life.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/wide-overall.jpg" width="100%" height="100%" alt="Feb. 8, 2020 | Valencia Apartments, San Luis Obispo | In a quiet study room at the back of the Valencia Apartment clubhouse, three friends spend their Saturday evening getting ready to use a Ouija board, a spiritualist device that is meant to allow people to communicate with the dead."/>
+<img src="img/close-opening.jpg" width="100%" height="100%" alt="Ouija boards come in different shapes and sizes but all display the alphabet, the numbers 0-9, and short phrases like “yes,” “no,” and “goodbye.” People in the circle place both their index fingers on the planchette, a small teardrop or heart-shaped object, which moves in response to the questions asked to the spirits."/>
+<img src="img/medium-portrait.jpg" width="100%" height="100%" alt="This method of communication rose in popularity after the American Civil War, when people lost many friends and relatives to battle. Though Ouija boards were used primarily only by mediums during the surgence of spiritualism, in current times it has transformed into a commercial parlor game that regular people use for a number of reasons, including for fun."/>
+<img src="img/medium-setup2.jpg" width="100%" height="100%" alt="“I love this kind of stuff. Just the possibility that I could talk to someone who died! So many people have actually been able to make contact and there’s too much evidence saying it’s real. I’ve always wanted to hold a real seance, with candles, which we can’t light here unfortunately, but this is good enough,” said Luci Simpson, a Cal Poly graduate."/>
+<img src="img/close-candles.jpg" width="100%" height="100%" alt="Simpson was able to convince her friends to perform this ritual with her by winning a Super Bowl bet—they don’t share her excitement at the thought of conducting an ouija session"/>
+<img src="img/medium-setup.jpg" width="100%" height="100%" alt="“I know spirits exist so I’m a little nervous. A few years ago, my mom and I scanned an old photo of my grandma and her sister as kids, and in the online version she was in the background of the house looking like she did when she died. But it wasn’t in the original,” stated Emily Cook, a 4th year Anthropology student. “It was kinda comforting but it was also legit scary.”"/>
+<img src="img/medium-usingboard.jpg" width="100%" height="100%" alt="UCSC student Sergey Gasparyan, on the other hand, showed up for the simple purpose of proving the game wrong. “There’s no way this is real. I’m not saying I don’t believe in ghosts, but I just don’t see how a cardboard toy made in China would ever be able to communicate with the dead,” he said. “Also I don’t really know anyone that died so if it actually works then that would be cool to see.”"/>
+<img src="img/close-planchette.jpg" width="100%" height="100%" alt="“Hello, spirit. We come in peace and we have some questions. Did you live in Valencia when you died?” Simpson asked the board. In the 15-minute session conducted, the spirit responded yes to living at Valencia, heart in response to why it hadn’t moved on from our world and 80J as the answer to which apartment they lived in (though Valencia apartments are numbered, not lettered)"/>
+<img src="img/close-using.jpg" width="100%" height="100%" alt="Despite the vague and partially inaccurate answers the board reflected, all three were surprised the planchette moved at all and accused one another of moving it on purpose. “I bet it didn’t work as well because we couldn’t light the candles in here,” Gasparyan said sarcastically."/>
+<img src="img/medium-cleanup.jpg" width="100%" height="100%" alt="“I’m kinda glad it didn’t work. I don’t want to get false hope and pretend that like, they’re actually saying something to me when it could just be coincidental or fake, but I’d be out here thinking I get to talk to my grandma again. I think that would be painful,” said Cook"/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Navigation</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Ghostly Experiences</h2>
+<article>
+  <p class="tab">Click on images to hear about people's experiences getting signs from the departed.<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/audio1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/audio2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/audio3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/person1a.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/person1.jpg'" onMouseOut="this.src='img/rollover/person1a.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/person2a.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/person2.jpg'" onMouseOut="this.src='img/rollover/person2a.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/person3a.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/person3.jpg'" onMouseOut="this.src='img/rollover/person3a.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Navigation</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/flowerparallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">Heading</h2>
+<article>
+<p class="tab">San Luis Obispo County resident Carol Hutchison visits her husband's grave and talks about her life now without him and her parents, and what she does to honor their memory.</p>	
+<video width="100%" height="100%" poster="img/posterz.jpg" controls>
+<source src="audio/JOUR410HutchisonInterview.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Navigation</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic1 section-->
+<div class="row whiteBG">
+<h2 id="num"></h2>
+    <!--empty header up here-->
+<article>
+<p class="tab"></p>
+<!--infographic1 embed code here-->
+<div class="piktowrapper-embed" style="height: 300px; position: relative;" data-uid="45004841-how-to-use-a-ouija-board"><div class="pikto-canvas-wrap"><div class="pikto-canvas"><div class="embed-loading-overlay" style="width: 100%; height: 100%; position: absolute; text-align: center;"><img width="60px" alt="Loading..." style="margin-top: 100px" src="https://create.piktochart.com/loading.gif"/><p style="margin: 0; padding: 0; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 16px">Loading...</p></div></div></div></div><script>(function(d){var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];if (d.getElementById(id)) { return;}js=d.createElement("script"); js.id=id; js.async=true;js.src="https://create.piktochart.com/assets/embedding/embed.js";ref.parentNode.insertBefore(js, ref);}(document));</script>    
+</article>
+</div>
+<!--end of infographic1 section-->
+
+    
+    
+    <!--start of text section-->
+<div class="row pinkBG">
+<h2 id="txt">The Human Fascination With Death</h2>
+<article>
+    <p class="tab"><br><br></p>
+    <button class="accordion">
+        The beginning of every life is always eventually followed by the end. That’s just the way our world works—everyone dies someday. It’s one of the most concrete things we know. What happens after death, however, remains a mystery.
+        <br>
+        <br>
+        Click to read more...
+    </button>
+    <div class="panel">  
+    <div style="width:50%;height:120px;padding-bottom:35%;padding-top:4%; padding-left: 10%;padding-right: 25%; position:relative;"><iframe src="https://giphy.com/embed/wfOe7SdZ3XyHm" width="100%" height="90%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    <br>
+    <div style="line-height: 1.6">
+        People are fascinated with death and the concept of an afterlife. We’ve woven it into our religions and set ideologies to help us understand the steadily approaching end of life. We imagine that people live on in another dimension, watching over Earth, in hopes of quenching our curiosity and easing our worries.
+    </div>
+    <div style="padding-top:3%; padding-bottom: 3%; margin-left: auto;margin-right: auto;width: 50%"><iframe width="580" height="380" src="https://www.youtube.com/embed/n1p937dkQHQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <br>
+    Consequently, there is also a great intrigue in communication with the dead.
+    <br>
+    <br>
+    <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+        <img src="img/psychology.png" width="580" height="400">
+    </div>
+    <div style="line-height: 1.6">
+        Talking to the dead has been a topic of interest in human culture since the ancient times of the Old Testament, where God forbade people from seeking psychics and King Saul paid the price for attempting to bring back the spirit of his dead mentor.
+    </div> 
+    <br>
+    <div style="padding-bottom: 5%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 20%"><a data-pin-do="embedPin" href="https://www.pinterest.com/pin/505951339359288303/"></a>
+    </div>
+    <div style="line-height: 1.6">
+        In the 1800s, relying on a middleman to act as the link between the worlds of the living and dead became common with the resurgence of Spiritualism.
+    </div>
+     <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+    <img src="img/spiritualism.png" width="580" height="280">
+    </div>
+    <div style="line-height: 1.6">
+        Spiritualism took hold of America quickly, acting as the perfect intersection between faith and science. It started with two sisters from New York, Maggie and Kate Fox, who began to communicate with a ghost in their apartment through a system of knocks. They skyrocketed in popularity and began communicating in front of audiences, starting a new wave of spiritual mediums.
+    </div>
+    <div style="padding-bottom: 3%;padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+<img border="0" alt="BeyondTheVeil" src="img/beyond.png" width="580" height="370">
+    </div>
+<div style="line-height: 1.6">
+    These mediums (or psychics, spirit guides, etc) used a variety of techniques to contact the dead. These are the same forms of communication many people think of today when seeking to speak to the dead. Some mediums say they simply connect with the dead through the energy of their living loved ones.
+    </div>
+    <div style="padding-bottom: 3%;padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+    <iframe width="580" height="315" src="https://www.youtube.com/embed/N8XmvD1GLGE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+<div style="line-height: 1.6">
+    Others use popular modern forms of communication include seances, spirit channeling, trance and ouija boards. This last technique has become a part of popular culture today, used even without the help of mediums.
+    </div>
+    <div style="padding-bottom: 3%;padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+         <iframe width="580" height="315" src="https://www.youtube.com/embed/PRo8TytvIDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+<div style="line-height: 1.6">
+    Though spiritual conduits and these various rituals were used largely for religious purposes in the past, many people use mediums now to get closure and help with grief management from the passing of loved ones.
+    </div>
+    <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+        <img src="img/goop.png" width="580" height="400">
+    </div>
+<div style="line-height: 1.6">
+    According to Dr. Natasha Tassell-Matamua, a senior lecturer at Massey University’s School of Psychology, after-death communication can act like therapy. People who believed they had had contact with the dead felt reported feelings of increased comfort and closure.
+    </div>
+    <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+    <img src="img/vice.png" width="580" height="300">
+    </div>
+<div style="line-height: 1.6">
+    We hear about, or even experience ourselves, little moments that seem to be messages from the other side. A butterfly lands next to a girl as she thinks about and misses her mother. The smell of cologne suddenly fills the air in a room that used to be shared with a husband. The radio starts playing the favorite song of an old friend just as they’re being remembered.
+    </div>
+    <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkaren.s.peterson%2Fposts%2F10213210658556775&width=500" width="580" height="310" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    </div>
+<div style="line-height: 1.6">
+    Many people acknowledge these signs and take them as positives, a little help to get through the feeling of losing someone to the unknown. But not everyone is on board with the idea of supernatural communication, especially through a conduit.
+<br>
+<br>
+Over the years, the idea of spiritual communications has faced a lot of controversy. There have been several instances of psychics and mediums being exposed as frauds, giving false readings in order to make money.
+</div>
+        <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+       <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This fake psychic led families to believe that she knew where their missing children were, and was exposed on national television 😭 her reaction has me CRYING <a href="https://t.co/TfKc0sImTq">pic.twitter.com/TfKc0sImTq</a></p>&mdash; Tarig. (@1Tarig) <a href="https://twitter.com/1Tarig/status/1162877983947800577?ref_src=twsrc%5Etfw">August 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+        </div>
+    <div style="line-height: 1.6">
+        A notable and popular example is psychic Sylvia Browne, who told a mother on The Montel Williams talk show in 2004 that her daughter was dead and wouldn’t ever be returning to her. Over a decade later, the missing girl, Amanda Berry, was found alive.
+        </div>
+    <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Dk9inPgoDu8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div style="line-height: 1.6">
+        Despite the mistrust in human beings claiming a connection to the spiritual world, people are still captivated by the idea of communicating with the dead. In the past few years, there have been technologies developed to create digital versions of the dead so we can continue to talk online.
+        </div>
+        <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">You say what now? <a href="https://t.co/UmbFW33711">pic.twitter.com/UmbFW33711</a></p>&mdash; Saya Ned (@SayaANed) <a href="https://twitter.com/SayaANed/status/1220186753014910982?ref_src=twsrc%5Etfw">January 23, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div style="line-height: 1.6">
+        Researchers at the MIT Media Lab and Ryerson University are currently attempting to make “augmented eternity” a reality through machine learning and artificial intelligence. By compiling all the texts, emails, tweets, snapchats, etc. of the deceased, neuroscientists and philosophers are trying to create realistic chatbots that could communicate with the living.
+        </div>
+        <div style="padding-bottom: 3%; padding-top: 3%; margin-left: auto;margin-right: auto;width: 50%">
+             <img src="img/guardian.png" width="580" height="500">
+        </div>
+        <div style="line-height: 1.6">
+        Now that’s some science fiction brought to life.
+        </div>
+        
+        
+        
+        
+        
+    </div>
+    </article>
+    
+</div>
+<!--end of text section-->
+
+    
+<!--start of infographic 2 section-->
+<div class="row whiteBG">
+<h2 id="hlg"></h2>
+<article>
+<p class="tab"></p>
+<!--infographic2 embed code here-->
+    <div class="piktowrapper-embed" style="height: 300px; position: relative;" data-uid="45013467-untitled-infographic"><div class="pikto-canvas-wrap"><div class="pikto-canvas"><div class="embed-loading-overlay" style="width: 100%; height: 100%; position: absolute; text-align: center;"><img width="60px" alt="Loading..." style="margin-top: 100px" src="https://create.piktochart.com/loading.gif"/><p style="margin: 0; padding: 0; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 16px">Loading...</p></div></div></div></div><script>(function(d){var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];if (d.getElementById(id)) { return;}js=d.createElement("script"); js.id=id; js.async=true;js.src="https://create.piktochart.com/assets/embedding/embed.js";ref.parentNode.insertBefore(js, ref);}(document));</script>
+</article>
+</div>
+<!--end of infographic2 section-->
+    
+<!--beginning of footer-->
+<footer>The Other Side | San Luis Obispo, CA | <a href="mailto: natasha.agharkar@gmail.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2020 | Site by Natsha Agharkar
+</footer>
+<!--end of footer-->
+	<!--this for pinterest-->
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+    <!--animation-->
+<script>
+    var textWrapper = document.querySelector('.ml9 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+    </script>
+
+    
+  <!----accordian---->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+    </script>
+    
+    
+    
+</html>
